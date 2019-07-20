@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Exercise 3</title>
+    <!--CSS-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      th {
+        background-color: yellowgreen;
+      }
+    </style>
+
+    <!--JS-->
+    <script type="text/javascript">
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var myObj = JSON.parse(this.responseText);
+          var planets = myObj.results;
+          var planets_table = "";
+
+          for (planet of planets) {
+            console.log(planet.name);
+            planets_table +=
+              "<tr><td>" +
+              planet.name +
+              "</td>" +
+              "<td>" +
+              planet.rotation_period +
+              "</td><td>" +
+              planet.diameter +
+              "</td><td>" +
+              planet.climate +
+              "</td><td>" +
+              planet.gravity +
+              "</td><td>" +
+              planet.terrain +
+              "</td><td>" +
+              planet.surface_water +
+              "</td><td>" +
+              planet.residents +
+              "</td><td>" +
+              planet.films +
+              "</td><td>" +
+              planet.created +
+              "</td><td>" +
+              planet.edited +
+              "</td><td>" +
+              planet.url +
+              "</td></tr>";
+          }
+
+          document.getElementById("kotak").innerHTML += planets_table;
+        }
+      };
+      xmlhttp.open("GET", "https://swapi.co/api/planets/", true);
+      xmlhttp.send();
+    </script>
+  </head>
+  <body>
+    <center>
+      <h1><u>Planets</u></h1>
+      <table
+        id="kotak"
+        class="table table-bordered"
+        border="1"
+        style="text-align: center"
+      >
+        <tr>
+          <th>Name</th>
+          <th>Rotation Period</th>
+          <th>Diameter</th>
+          <th>Climate</th>
+          <th>Gravity</th>
+          <th>Terrain</th>
+          <th>Surface Water</th>
+          <th>Residents</th>
+          <th>Films</th>
+          <th>Created</th>
+          <th>Edited</th>
+          <th>URL</th>
+        </tr>
+      </table>
+    </center>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <title>Exercise 2</title>
+    <script>
+      function dis(val) {
+        document.getElementById("result").value += val;
+      }
+
+      function solve() {
+        let x = document.getElementById("result").value;
+        let y = eval(x);
+        document.getElementById("result").value = y;
+      }
+
+      function clr() {
+        document.getElementById("result").value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <center style="margin-top : 50px;">
+      <table
+        class="table table-bordered"
+        style="width: 60%; text-align: center"
+      >
+        <thead>
+          <tr>
+            <td colspan="4"><h1>Kalkulator</h1></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="4">
+              <input
+                type="text"
+                value=" "
+                id="result"
+                style="width: 100% ; text-align: right;"
+                readonly
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <button value="C" onclick="clr()" style="width :100%" />C</button>
+            </td>
+            <td colspan="3"></td>
+          </tr>
+
+          <tr>
+            <td><button value="1" onclick="dis('1')">1</button></td>
+            <td><button value="2" onclick="dis('2')">2</button></td>
+            <td><button value="3" onclick="dis('3')">3</button></td>
+            <td><button value="+" onclick="dis('+')">+</button></td>
+          </tr>
+          <tr>
+            <td><button value="4" onclick="dis('4')">4</button></td>
+            <td><button value="5" onclick="dis('5')">5</button></td>
+            <td><button value="6" onclick="dis('6')">6</button></td>
+            <td><button value="-" onclick="dis('-')">-</button></td>
+          </tr>
+
+          <tr>
+            <td><button value="7" onclick="dis('7')">7</button></td>
+            <td><button value="8" onclick="dis('8')">8</button></td>
+            <td><button value="9" onclick="dis('9')">9</button></td>
+            <td><button value="/" onclick="dis('/')">/</button></td>
+          </tr>
+
+          <tr>
+            <td colspan="2"><button value="0" onclick="dis('0')">0</button></td>
+            <td><button value="." onclick="dis('.')">.</button></td>
+            <td><button value="=" onclick="solve('=')">=</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+  </body>
+</html>

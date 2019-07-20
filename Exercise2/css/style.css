@@ -1,0 +1,27 @@
+#kartu {
+  margin: auto;
+  margin-top: 50px;
+  border-color: black;
+}
+
+#kartu_1 {
+  position: absolute;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  margin: auto;
+}
+
+li {
+  position: relative;
+}
+
+button {
+  width: 100%;
+}
+
+td {
+  font-size: 30px;
+}
